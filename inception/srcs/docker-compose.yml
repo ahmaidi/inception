@@ -2,7 +2,7 @@ version: "3"
 services:
  mariadb:
     build: ./requirements/mariadb
-    image: mariadb
+    image: mariadb:v1
     container_name: mariadb
     ports:
     - 3306
@@ -15,7 +15,7 @@ services:
             - db_data:/var/lib/mysql  
  nginx:
     build: ./requirements/nginx
-    image: nginx
+    image: nginx:v1
     container_name: nginx
     ports:
     - 443:443
@@ -29,7 +29,7 @@ services:
 
  wordpress:
     build: ./requirements/wordpress
-    image: wordpress
+    image: wordpress:v1
     container_name: wordpress
     ports:
     - 9000
@@ -45,7 +45,7 @@ services:
 
  redis:
     build: ./requirements/bonus/redis
-    image: redis
+    image: redis:v1
     container_name: redis
     ports:
     - 6379:6379
@@ -57,7 +57,7 @@ services:
 
  portfolio :
     build: ./requirements/bonus/portfolio
-    image: portfolio
+    image: portfolio:v1
     container_name: portfolio
     ports:
     - 3000:3000
@@ -67,7 +67,7 @@ services:
 
  adminer :
     build: ./requirements/bonus/adminer
-    image: adminer
+    image: adminer:v1
     container_name: adminer
     ports :
     - 8888:8888
@@ -77,7 +77,7 @@ services:
 
  cadvisor:
     build: ./requirements/bonus/cadvisor
-    image: cadvisor
+    image: cadvisor:v1
     container_name: cadvisor
     restart: always
     networks:
