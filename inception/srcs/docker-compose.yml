@@ -75,6 +75,24 @@ services:
     networks:
     - boujdour
 
+ ftp-server:
+    build: ./requirements/bonus/ftp-server
+    image: ftp-server:v1
+    container_name: ftp-server
+    depends_on:
+      - wordpress
+    env_file:
+      - .env
+    ports:
+      - "20:20"
+      - "21:21"
+      - "40000-40010:40000-40010"
+    restart: always
+    networks:
+    - boujdour
+    volumes:
+      - wp_data:/home/ahmaidi/ftp/
+
  cadvisor:
     build: ./requirements/bonus/cadvisor
     image: cadvisor:v1
